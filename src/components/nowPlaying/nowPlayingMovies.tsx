@@ -1,3 +1,4 @@
+import "./nowPlaying.css"
 function NowPaying() {
   return (
     <section className="now-playing-section">

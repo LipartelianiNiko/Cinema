@@ -1,0 +1,11 @@
+.now-playing-section{
+    width: 1728px;
+height: 502px;
+opacity: 1;
+gap: 24px;
+padding-right: 70px;
+padding-left: 70px;
+background-color: red;
+z-index: 2;
+
+}
