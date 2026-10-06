@@ -1,0 +1,134 @@
+.card-frame{
+    display: flex;
+    flex-direction: row;
+
+    width: 470px;
+    height: 160px;
+    flex-shrink: 0;
+    gap: 15px;
+    opacity: 1;
+    border-radius: 20px;
+    padding: 12px;
+    background: var(--bg-card, #1E2031);
+    box-shadow: 0px 1px 4px 0px var(--shadow);
+
+}
+
+.image-frame{
+    width: 229px;
+    height: 136px;
+    gap: 9px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.comming-soon-image{
+    width: 229px;
+    height: 136px;
+    opacity: 1;
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+    object-position: center 6%;
+    display: block;}
+
+.details-frame {
+  width: 202px;
+  height: 132px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding-right: 60px;
+  box-sizing: border-box;
+
+  opacity: 1;
+}
+
+
+
+.date-frame{
+    width: 142px;
+height: 13px;
+opacity: 1;
+
+font-family: font/family;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+color: var(--color-red, #EC3013);
+  white-space: nowrap;
+  text-transform: uppercase;
+
+
+
+}
+.name-frame {
+  width: 135px;
+  height: 36px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  opacity: 1;
+  margin-top: 8px;
+
+}
+
+.name {
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+  width: 135px;
+  height: 13px;
+
+  opacity: 1;
+
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.genre-duration{
+    width: 88px;
+    height: 16px;
+    opacity: 1;
+
+    font-family: font/family;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: var(--text-secondary, #A9A9A9);
+
+}
+
+.notify-btn{
+    width: 96.99906921386719px;
+    height: 28.00114631652832px;
+    gap: 4px;
+    opacity: 1;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    border-radius: 999px;
+    border-width: 1px;
+    border: 1px solid var(--text-secondary, #A9A9A9);
+    background: transparent;
+ color: inherit;
+  font: inherit;
+  transform: translateY(50px);
+
+}

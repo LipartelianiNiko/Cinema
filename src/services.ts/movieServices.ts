@@ -12,3 +12,7 @@ export function getFeaturedFilms() {
 export function getNowPlayingMovies() {
   return apiFetch<FeaturedFilmsResponse>("/movies/now-playing");
 }
+
+export function getCommingSoon() {
+  return apiFetch<FeaturedFilmsResponse>("/movies/coming-soon");
+}

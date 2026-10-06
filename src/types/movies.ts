@@ -8,6 +8,7 @@ export type FeaturedFilm = {
   runtimeMinutes: number;
   posterUrl:string;
   backdropUrl: string;
+  releaseDate:string;
   fromPrice: number;
   synopsis: string;
   isFeatured: boolean;
