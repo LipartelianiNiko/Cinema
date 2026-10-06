@@ -1,9 +1,12 @@
 // Hero.types.ts
+import type {Genre} from "./genres"
+
 export type FeaturedFilm = {
   id: number;
   slug: string;
   title: string;
   runtimeMinutes: number;
+  posterUrl:string;
   backdropUrl: string;
   fromPrice: number;
   synopsis: string;
@@ -13,6 +16,7 @@ export type FeaturedFilm = {
     minAge: number;
     description: string;
   };
+  genres: Genre[];
 };
 
 /*bassed on this

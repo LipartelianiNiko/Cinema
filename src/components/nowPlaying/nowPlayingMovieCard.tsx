@@ -1,31 +1,40 @@
-function NowPayingMovieCard() {
+import "./nowPlaying.css"
+import "./nowPlayingCard.css"
+import type { FeaturedFilm } from "../../types/movies"
+
+type MovieCardProps = {
+  movie: FeaturedFilm;
+};
+
+function NowPayingMovieCard({movie}: MovieCardProps) {
   return (
     <article className="now-playing-card">
-
-        <img className="now-playing-card-image">
-        </img>
-
         <div className="now-playing-card-content">
-          <h3 className="now-playing-card-title">
-            Movie Title
-          </h3>
 
-          <div className="now-playing-card-info">
-            <span>Genre</span>
-            <span>120 min</span>
-            <span>16+</span>
+          <div className="now-playing-card-image-box">
+            <img src={movie.posterUrl} className="now-playing-card-image">
+            </img>
           </div>
 
-          <div className="now-playing-card-bottom">
-              <span className="now-playing-card-price">
-                From $10
-              </span>
+          <div className="now-playing-card-details">
 
-              <button className="now-playing-card-button">
-                Buy Tickets
-              </button>
+            <h3 className="now-playing-card-title">
+              {movie.title}
+            </h3>
+
+            <div className="now-playing-card-info">
+
+              <div className="genre-duration">
+                <span>{movie.genres[0].name}</span>
+                <span> | {movie.runtimeMinutes} min</span>
+              </div>
+
+              <span className="age">{movie.ageRating.code}</span>
+            </div>
+
           </div>
 
+          <div></div>
 
         </div>
     </article>

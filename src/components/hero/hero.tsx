@@ -1,7 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { useEffect, useState } from "react";
-import type { FeaturedFilm } from "./hero.types";//type
+import type { FeaturedFilm } from "../../types/movies";//type
 import { getFeaturedFilms } from "../../services.ts/movieServices";
 
 //make request to api to get featured films as the component is mounted. use useeffect,
