@@ -1,12 +1,14 @@
 import "./nowPlaying.css"
 import "./nowPlayingCard.css"
 import type { FeaturedFilm } from "../../types/movies"
+import { useNavigate } from "react-router-dom";
 
 type MovieCardProps = {
   movie: FeaturedFilm;
 };
 
 function NowPayingMovieCard({movie}: MovieCardProps) {
+  const navigate = useNavigate();
   return (
     <article className="now-playing-card">
         <div className="now-playing-card-content">
@@ -32,6 +34,17 @@ function NowPayingMovieCard({movie}: MovieCardProps) {
               <span className="age">{movie.ageRating.code}</span>
             </div>
 
+            <div className="price-btn-frame">
+              <label className="price-from">
+                from {movie.fromPrice}
+              </label>
+              
+              {/**request is sent with slug , not id */}
+              <button className="buy-btn"
+              onClick={() => navigate(`/movies/${movie.slug}`)
+              }>
+                <p className="buy-btn-text">Buy Ticket</p></button>
+            </div>
           </div>
 
           <div></div>

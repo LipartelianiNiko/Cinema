@@ -1,0 +1,10 @@
+.hall-frame{
+    width: 454px;
+height: 133px;
+opacity: 1;
+gap: 9px;
+border-radius: 18px;
+padding: 15px;
+background: var(--bg-card, #1E2031);
+
+}

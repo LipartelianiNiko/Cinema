@@ -18,6 +18,8 @@ export type FeaturedFilm = {
     description: string;
   };
   genres: Genre[];
+
+  
 };
 
 /*bassed on this

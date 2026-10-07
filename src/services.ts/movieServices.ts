@@ -1,5 +1,8 @@
 import { apiFetch } from "./api";
 import type { FeaturedFilm } from "../types/movies";
+import type { MovieDetailsResponse } from "../types/movieDetals";
+import "../types/movieSessions";
+import type { MovieSessionsResponse } from "../types/movieSessions";
 
 type FeaturedFilmsResponse = {
   data: FeaturedFilm[];
@@ -15,4 +18,12 @@ export function getNowPlayingMovies() {
 
 export function getCommingSoon() {
   return apiFetch<FeaturedFilmsResponse>("/movies/coming-soon");
+}
+
+export function getMovie(slug:string) {
+  return apiFetch<MovieDetailsResponse>(`/movies/${slug}`);
+}
+
+export function getMovieSessions(slug: string, date: string) {
+  return apiFetch<MovieSessionsResponse>(`/movies/${slug}/sessions?date=${date}`);
 }

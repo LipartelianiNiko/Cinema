@@ -1,6 +1,6 @@
 .now-playing-card {
   width: 260px;
-  height: 452px;
+  height: 470px;
 
   box-sizing: border-box;
 
@@ -36,4 +36,61 @@
   border-radius: 14px;
 
   object-fit: cover;
+}
+
+.price-btn-frame {
+  width: 236px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  opacity: 1;
+
+  border: none;
+}
+
+.buy-btn {
+  width: 119px;
+  height: 35px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 10px;
+  padding-right: 22px;
+  padding-bottom: 10px;
+  padding-left: 22px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--color-red, #EC3013);
+   cursor: pointer;
+  transition: 300ms linear;
+}
+
+.buy-btn:hover {
+  opacity: 0.85;
+}
+
+.buy-btn-text {
+  width: 75px;
+  height: 15px;
+
+  margin: 0;
+
+  opacity: 1;
+
+  font-weight: 800;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: white;
+  white-space: nowrap;
 }

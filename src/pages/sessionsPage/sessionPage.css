@@ -1,0 +1,272 @@
+.banner-frame{
+    width: 100%;
+    height: 567px;
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.banner-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    top: -88.56px;
+    filter: blur(4px);
+}
+
+.banner-details-frame{
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    width: 903px;
+    height: 374px;
+    gap: 34px;
+    opacity: 1;
+    top: 152px;
+    left: 60px;
+
+}
+
+.poster-img{
+    width: 289px;
+    height: 374px;
+    border-radius: 14px;
+    opacity: 1;
+    box-shadow: 0px 4px 64px 0px var(--shadow);
+
+}
+
+.details {
+    width: 580px;
+    height: 199px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    gap: 15px;
+
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+    box-sizing: border-box;
+
+    opacity: 1;
+    color:white;
+}
+
+.banner-name-details-frame{
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    height: 141px;
+    gap: 20px;
+    opacity: 1; 
+
+}
+
+.now-playing{
+    width: 105px;
+    height: 25px;
+    gap: 4px;
+    opacity: 1;
+    border-radius: 999px;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    background: var(--tint-red, #EC30131A);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.now-playing-text{
+    opacity: 1;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-red, #EC3013);
+}
+
+.title{
+    font-family: font/family;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.synopsis{
+    font-family: font/family;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+
+}
+
+.banner-badges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.age-rating{
+    width: 42px;
+    height: 25px;
+    gap: 4px;
+    opacity: 1;
+    border-radius: 999px;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    background: var(--tint-red, #EC30131A);
+     color: var(--color-red, #EC3013);}
+
+
+
+.runtime{
+    width: 82px;
+    height: 25px;
+    gap: 4px;
+    opacity: 1;
+    border-radius: 999px;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    background: var(--tint-white, #FFFFFF1A);
+
+}
+
+
+
+.format{
+    width: 90px;
+    height: 25px;
+    gap: 4px;
+    opacity: 1;
+    border-radius: 999px;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    background: var(--tint-white, #FFFFFF1A);
+
+}
+
+.age-rating > p,
+.runtime > p,
+.format > p {
+  margin: 0;
+
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  white-space: nowrap;
+}
+
+
+.sessions-frame{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 534px;
+    opacity: 1;
+    padding-right: 51px;
+    padding-left: 51px;
+    gap: 10px;
+
+    background-color: red;
+
+}
+
+.movie-details-frame
+{
+    margin-left: auto;
+    width: 441px;
+    height: 534px;
+    opacity: 1;
+    padding-right: 26px;
+    padding-left: 26px;
+    gap: 17px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.days{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap:7px
+}
+
+.day{
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    padding-top: 9px;
+    padding-right: 10px;
+    padding-bottom: 9px;
+    padding-left: 10px;
+    gap: 6px;
+    border-radius: 16px;
+    background: var(--bg-card, #1E2031);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: transparent;
+    cursor: pointer;
+  transition: 0.2s ease;
+}
+.day:hover {
+  background: #2a2c3d;
+}
+
+.day-name {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size:12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.day-number {
+    font-size: 18px;
+    font-weight: 800;
+    font-style: ExtraBold;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.venue{
+    width: 1175px;
+height: 164px;
+opacity: 1;
+gap: 16px;
+background-color: blue;
+
+}
