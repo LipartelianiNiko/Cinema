@@ -46,7 +46,7 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
 
     gap: 15px;
@@ -65,7 +65,7 @@
     flex-direction: column;
     width: 580px;
     height: 141px;
-    gap: 20px;
+    gap: 12px;
     opacity: 1; 
 
 }
@@ -114,6 +114,12 @@
     line-height: 130%;
     letter-spacing: 0%;
 
+}
+
+
+.title,
+.synopsis {
+    margin: 10px;
 }
 
 .banner-badges {
@@ -184,6 +190,7 @@
 
 
 .sessions-frame{
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -194,12 +201,13 @@
     padding-left: 51px;
     gap: 10px;
 
-    background-color: red;
 
 }
 
 .movie-details-frame
 {
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     width: 441px;
     height: 534px;
@@ -208,10 +216,36 @@
     padding-left: 26px;
     gap: 17px;
     border-radius: 20px;
-    background-color: white;
+}
+
+.movie-details-frame >h2{
+    font-family: font/family;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color:white
+}
+
+.days-header{
+    width: 93px;
+height: 22px;
+opacity: 1;
+
+    font-family: font/family;
+font-weight: 800;
+font-style: ExtraBold;
+font-size:20px;
+line-height: 100%;
+letter-spacing: 0%;
+color: white;
+
 }
 
 .days{
+    padding-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -262,11 +296,121 @@
 
 }
 
+.venues {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    opacity: 1;
+
+}
+
 .venue{
-    width: 1175px;
-height: 164px;
-opacity: 1;
-gap: 16px;
-background-color: blue;
+    width: 100%;
+    min-height: 164px;
+    opacity: 1;
+    gap: 16px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+
+}
+.venue > p {
+    margin: 0;
+}
+
+.venue-name{
+    opacity: 1;
+
+    font-family: font/family;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--text-primary, #FFFFFF);
+
+}
+
+
+.halls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.details-lable{
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--text-secondary, #A9A9A9);
+
+}
+
+.details-text{
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:white;
+
+}
+
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    width: 389px;
+    height: 35px;
+    gap: 7px;
+    opacity: 1;
+
+}
+
+.rating-note{
+    display: flex;
+    flex-direction: column;
+    width: 389px;
+    height: 70px;
+    padding-top: 9px;
+    padding-right: 13px;
+    padding-bottom: 9px;
+    padding-left: 13px;
+    gap: 7px;
+    opacity: 1;
+    border-radius: 12px;
+    background: #E27E041A;
+
+}
+
+.rating-note-lable{
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color: var(--color-orange, #E27E04);
+
+}
+
+.rating-note-text{
+    font-family: font/family;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0%;
+
+    color: var(--color-orange, #E27E04);
 
 }

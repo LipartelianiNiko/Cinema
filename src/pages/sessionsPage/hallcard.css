@@ -1,10 +1,30 @@
 .hall-frame{
     width: 454px;
-height: 133px;
-opacity: 1;
-gap: 9px;
-border-radius: 18px;
-padding: 15px;
-background: var(--bg-card, #1E2031);
+    min-height: 133px;
+    opacity: 1;
+    gap: 9px;
+    border-radius: 18px;
+    padding: 15px;
+    background: var(--bg-card, #1E2031);
+    color:white
+
+}
+
+.session-cards-frame {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+   align-items: start;
+}
+
+.hall-name{
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--text-primary, #FFFFFF);
+
 
 }

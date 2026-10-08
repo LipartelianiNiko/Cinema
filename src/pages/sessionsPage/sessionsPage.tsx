@@ -8,8 +8,10 @@ import "../../services.ts/movieServices"
 import type { HallGroup, MovieSession, VenueSessions } from "../../types/movieSessions";
 import HallCard from "./hallCard";
 
+
 function SessionsPage(){
     const { slug } = useParams();
+ 
 
     const [movie, setMovie] = useState<MovieDetailsResponse | null>(null);
     const [selectedDate, setSelectedDate] = useState<string>("");
@@ -157,7 +159,7 @@ function SessionsPage(){
 
                             return (
                             <section className="venue" key={venue.venue.id}>
-                                <h2>{venue.venue.name}</h2>
+                                <p className="venue-name">{venue.venue.name}</p>
 
                                 <div className="halls">
                                 {halls.map((hallGroup) => (
@@ -172,13 +174,40 @@ function SessionsPage(){
 
         
                 <div className="movie-details-frame">
-                    <div>Details</div>
-                    <div>Director</div>
-                    <div>Main Cast</div>
-                    <div>Duration</div>
-                    <div>Release Date</div>
-                    <div>From</div>
-                    <div>Rating Note</div>
+                    <h2>Details</h2>
+                    <div className="movie-details">
+                        <label className="details-lable">Director</label>
+                        <text className="details-text" > {movie.data.director}</text>
+                    </div>
+                    <div className="movie-details">
+                        <label className="details-lable">Main Cast</label>
+                        <text className="details-text"> {movie.data.cast}</text>
+
+                    </div>
+                    <div className="movie-details">
+                        <label className="details-lable">Duration</label>
+                        <text className="details-text"> {movie.data.director}</text>
+                    </div>
+                    <div className="movie-details">
+                        <label className="details-lable">Release Date</label>
+                        <span className="details-text">   
+                            {new Date(`${movie.data.releaseDate}T00:00:00`).toLocaleDateString("en-GB",  {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric",
+                            })}
+                        </span>
+                    </div>
+                    <div className="movie-details">
+                        <label className="details-lable">Formats</label>
+                        <span className="details-text">
+                            {movie.data.formats.map((format) => format.name).join(", ")}
+                        </span>
+                    </div>
+                    <div className="rating-note">
+                        <label className="rating-note-lable">Rating Note</label>
+                        <text className="rating-note-text"> {movie.data.ageRating.description}</text>
+                    </div>
 
 
                 </div>

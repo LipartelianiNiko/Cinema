@@ -8,7 +8,7 @@ type HallCardProps = {
 function HallCard({ hall }: HallCardProps) {
     return(
         <div className="hall-frame">
-            <h1>{hall.hall.name}</h1>
+            <p className="hall-name">Hall {hall.hall.name}</p>
             <div className="session-cards-frame">
                 {/**here goes loop to dynamially create cards */}
                 {hall.sessions.map((session) => (

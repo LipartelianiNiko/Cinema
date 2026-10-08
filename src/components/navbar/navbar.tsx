@@ -1,7 +1,15 @@
 import "./Navbar.css";
+import SignUpModal from "../auth/signUpModal";
+import { useState } from "react";
+import LoginModal from "../auth/logInModal";
 
 function Navbar() {
+  const [authModal, setAuthModal] = useState<"signup" | "login" | null>(null);
+
+
+
   return (
+    <>
     <nav className="navbar">
 
       <div className="navbar-left">
@@ -30,11 +38,11 @@ function Navbar() {
 
         <div className="navbar-auth">
 
-          <button className="navbar-signup">
+          <button className="navbar-signup" onClick={() => setAuthModal("signup")}>
             Sign up
           </button>
 
-          <button className="navbar-login">
+          <button className="navbar-login" onClick={() => setAuthModal("login")}>
             Log in
           </button>
 
@@ -43,6 +51,22 @@ function Navbar() {
       </div>
 
     </nav>
+
+    {authModal === "signup" && (
+        <SignUpModal
+            onClose={() => setAuthModal(null)}
+            onLogin={() => setAuthModal("login")}
+        />
+    )}
+
+    {authModal === "login" && (
+        <LoginModal
+            onClose={() => setAuthModal(null)}
+            onSignUp={() => setAuthModal("signup")}
+
+        />
+    )}
+    </>
   );
 }
 
