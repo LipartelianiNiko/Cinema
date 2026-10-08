@@ -1,0 +1,166 @@
+.card-frame {
+    display: flex;
+    flex-direction: column;
+    width: 252px;
+    height: 104px;
+    gap: 6px;
+    opacity: 1;
+    border-radius: 16px;
+    padding: 15px;
+    background: var(--bg-card, #1E2031);
+
+}
+
+.card-contents {
+    display: flex;
+    flex-direction: column;
+    width: 222px;
+    height: 74px;
+    gap: 12px;
+    opacity: 1;
+}
+
+.card-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 222px;
+    height: 23px;
+    opacity: 1;
+
+}
+
+.time {
+    width: 52px;
+    height: 20px;
+    opacity: 1;
+    font-family: font/family;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+
+}
+
+.sessions-list-format-badge {
+    width: 68px;
+    height: 23px;
+    opacity: 1;
+    border-radius: 999px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    background: var(--bg-raised, #2A2C3D);
+
+    font-family: font/family;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+
+
+
+
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    width: 222px;
+    height: 39px;
+    gap: 8px;
+    opacity: 1;
+
+}
+
+.card-bottom-detils {
+    display: flex;
+    flex-direction: column;
+    width: 158px;
+    height: 39px;
+    gap: 10px;
+    opacity: 1;
+
+}
+
+.subtitles {
+    width: 101px;
+    height: 16px;
+    opacity: 1;
+
+    font-family: font/family;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: var(--text-secondary, #A9A9A9);
+
+
+}
+
+.location { 
+    width: 158px;
+height: 13px;
+opacity: 1;
+font-family: font/family;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+color:white;
+
+
+
+}
+
+
+.card-bottom-tickets-price {
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+    height: 38px;
+    gap: 10px;
+    opacity: 1;
+
+
+}
+
+.tickets-left {
+    width: max-content;
+    height: 16px;
+    white-space: nowrap;
+    opacity: 1;
+    font-family: font/family;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: var(--color-green, #4ADE80);
+
+
+}
+
+.price {
+    width: max-content;
+    height: 15px;
+    white-space: nowrap;
+    opacity: 1;
+    font-family: font/family;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+
+
+}
