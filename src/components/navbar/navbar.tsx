@@ -2,9 +2,13 @@ import "./Navbar.css";
 import SignUpModal from "../auth/signUpModal";
 import { useState } from "react";
 import LoginModal from "../auth/logInModal";
+import { useNavigate } from "react-router-dom";
+
 
 function Navbar() {
   const [authModal, setAuthModal] = useState<"signup" | "login" | null>(null);
+  const navigate = useNavigate();
+
 
 
 
@@ -19,7 +23,7 @@ function Navbar() {
           <span className="navbar-logo-xii">XII</span>
         </div>
 
-        <div className="navbar-sessions">
+        <div className="navbar-sessions" onClick={() => navigate(`/sessions`)}>
           SESSIONS
         </div>
 

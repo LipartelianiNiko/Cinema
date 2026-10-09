@@ -1,7 +1,7 @@
 import Hero from "../../components/hero/hero";
 import NowInCinema from "../../components/nowPlaying/nowPlayingMovies"; 
 import PreviouslyViewed from "../../components/rescentlyViewed/rescentlyViewed";
-import SessionsPage from "../sessionsPage/sessionsPage";
+
 function HomePage() {
   return (
     <>
@@ -10,8 +10,7 @@ function HomePage() {
         <Hero />
         <NowInCinema />
         <PreviouslyViewed />
-        <div></div>
-        <SessionsPage/>
+
       </main>
     </>
   );

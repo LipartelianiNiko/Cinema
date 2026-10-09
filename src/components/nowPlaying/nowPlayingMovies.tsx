@@ -4,11 +4,13 @@ import { getNowPlayingMovies } from "../../services.ts/movieServices";
 import type { FeaturedFilm } from "../../types/movies"
 import CommingSoonCard from "./commingSoonCard"
 import { getCommingSoon } from "../../services.ts/movieServices";
-
+import { useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
 function NowPayingMovies() {
+    const navigate = useNavigate();
+
 
   const [movies, setNowPlayingMovies] = useState<FeaturedFilm[]>([]);//set featured films to be empty array, setFetaured changes it
   
@@ -52,7 +54,7 @@ function NowPayingMovies() {
 
         <div className="now-playing-headers">
           <div className="now-playing-box"><h1 className="now-playing-text">NOW PLAYING</h1></div>
-          <div className="see-all-box">see all</div>
+          <div className="see-all-box" onClick={() => navigate(`/sessions`)}>see all</div>
         </div>
 
         <div className="now-playing-movies">

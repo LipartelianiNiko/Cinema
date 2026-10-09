@@ -3,6 +3,10 @@ import type { FeaturedFilm } from "../types/movies";
 import type { MovieDetailsResponse } from "../types/movieDetals";
 import "../types/movieSessions";
 import type { MovieSessionsResponse } from "../types/movieSessions";
+import type {AllSessionsResponse} from "../types/allSessions"
+import { buildSessionsQuery } from "./sessionsQuery";
+import type { SessionFilters } from "../pages/sessionsPage/filterPanel";
+
 
 type FeaturedFilmsResponse = {
   data: FeaturedFilm[];
@@ -26,4 +30,9 @@ export function getMovie(slug:string) {
 
 export function getMovieSessions(slug: string, date: string) {
   return apiFetch<MovieSessionsResponse>(`/movies/${slug}/sessions?date=${date}`);
+}
+
+export function getAllSessions(filters?: SessionFilters, signal?: AbortSignal) {
+  const query = filters ? buildSessionsQuery(filters) : "";
+  return apiFetch<AllSessionsResponse>(`/sessions${query}`, { signal });
 }
