@@ -125,7 +125,6 @@
 }
 
 .movies-list-header {
-    width: 137px;
     height: 15px;
     opacity: 1;
     font-family: font/family;
@@ -135,6 +134,8 @@
     line-height: 100%;
     letter-spacing: 0%;
     color: white;
+    width: auto;
+    white-space: nowrap;
 }
 
 .sort {
@@ -177,4 +178,60 @@ background: var(--bg-raised, #2A2C3D);
     opacity: 0.5;
     pointer-events: none;
     transition: opacity 0.15s;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pg-btn {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-secondary, #A9A9A9);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.pg-btn:hover:not(:disabled):not(.is-active) {
+    background: var(--bg-raised, #2A2C3D);
+    color: white;
+}
+
+.pg-btn.is-active {
+    background: #f23a1b;
+    color: white;
+}
+
+.pg-arrow {
+    background: var(--bg-raised, #2A2C3D);
+    color: white;
+}
+
+.pg-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pg-btn:focus-visible {
+    outline: 2px solid #f23a1b;
+    outline-offset: 2px;
+}
+
+.pg-dots {
+    width: 24px;
+    text-align: center;
+    color: var(--text-secondary, #A9A9A9);
+    font-size: 13px;
 }

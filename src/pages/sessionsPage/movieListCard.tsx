@@ -32,7 +32,6 @@ function MovieListCard({movieGroup}:MovieListCardProps){
 
             <div className="sessions-list-frame">
                 {/*sessions cards goes here */}
-                    <div className="movies-list-frame">
                         {movieGroup.sessions.map((session) => (
                             <SessionListCard
                             key={session.id}
@@ -41,7 +40,7 @@ function MovieListCard({movieGroup}:MovieListCardProps){
                             />
                         ))}
      
-                    </div>
+                    
                 
             </div>
 

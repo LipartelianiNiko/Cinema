@@ -32,7 +32,7 @@ export function getMovieSessions(slug: string, date: string) {
   return apiFetch<MovieSessionsResponse>(`/movies/${slug}/sessions?date=${date}`);
 }
 
-export function getAllSessions(filters?: SessionFilters, signal?: AbortSignal) {
-  const query = filters ? buildSessionsQuery(filters) : "";
+export function getAllSessions(filters?: SessionFilters, page = 1, signal?: AbortSignal) {
+  const query = filters ? buildSessionsQuery(filters, page) : "";
   return apiFetch<AllSessionsResponse>(`/sessions${query}`, { signal });
 }
