@@ -427,3 +427,45 @@
 .log-in-modal-frame .footer {
     width: 100%;
 }
+
+/* login can open on top of the seat modal */
+.modal-overlay {
+    z-index: 1100;
+}
+
+/* fixed heights would cut off the error text */
+.log-in-modal-frame,
+.sign-up-modal-frame {
+    height: auto;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.auth-error {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(236, 48, 19, 0.12);
+    border: 1px solid rgba(236, 48, 19, 0.5);
+    color: white;
+    font-size: 12px;
+}
+
+.sign-up-btn {
+    background: var(--color-red, #EC3013);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.sign-up-btn:disabled {
+    background: var(--text-disabled, #505261);
+    cursor: not-allowed;
+}
+
+.upload-box {
+    cursor: pointer;
+}

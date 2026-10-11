@@ -3,12 +3,11 @@ import SessionListCard from "./sessionsListCard";
 import type { MovieSessionsGroup} from "../../types/allSessions"
 
 type MovieListCardProps = {
-  movieGroup: MovieSessionsGroup;
+    movieGroup: MovieSessionsGroup;
+    onSessionClick: (sessionId: number) => void;
 };
 
-
-
-function MovieListCard({movieGroup}:MovieListCardProps){
+function MovieListCard({ movieGroup, onSessionClick }: MovieListCardProps) {
 
     return(
 
@@ -32,15 +31,14 @@ function MovieListCard({movieGroup}:MovieListCardProps){
 
             <div className="sessions-list-frame">
                 {/*sessions cards goes here */}
-                        {movieGroup.sessions.map((session) => (
-                            <SessionListCard
+                    {movieGroup.sessions.map((session) => (
+                        <SessionListCard
                             key={session.id}
                             session={session}
                             movie={movieGroup.movie}
-                            />
-                        ))}
-     
-                    
+                            onClick={() => onSessionClick(session.id)}
+                        />
+                    ))}
                 
             </div>
 

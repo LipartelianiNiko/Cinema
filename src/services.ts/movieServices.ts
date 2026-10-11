@@ -6,6 +6,8 @@ import type { MovieSessionsResponse } from "../types/movieSessions";
 import type {AllSessionsResponse} from "../types/allSessions"
 import { buildSessionsQuery } from "./sessionsQuery";
 import type { SessionFilters } from "../pages/sessionsPage/filterPanel";
+import type { SessionListItem } from "../types/allSessions";
+import type { SeatMapResponse } from "../types/sessionSeats";
 
 
 type FeaturedFilmsResponse = {
@@ -35,4 +37,12 @@ export function getMovieSessions(slug: string, date: string) {
 export function getAllSessions(filters?: SessionFilters, page = 1, signal?: AbortSignal) {
   const query = filters ? buildSessionsQuery(filters, page) : "";
   return apiFetch<AllSessionsResponse>(`/sessions${query}`, { signal });
+}
+
+export function getSession(id: number, signal?: AbortSignal) {
+  return apiFetch<{ data: SessionListItem }>(`/sessions/${id}`, { signal });
+}
+
+export function getSessionSeats(id: number, signal?: AbortSignal) {
+  return apiFetch<SeatMapResponse>(`/sessions/${id}/seats`, { signal });
 }

@@ -128,44 +128,157 @@
 }
 
 /* ==================== BUTTONS ==================== */
-
+/* the dropdown positions against this, so it MUST be relative */
 .navbar-auth {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  position: relative;
 }
 
-.navbar-signup,
-.navbar-login {
-  height: 41px;
-  box-sizing: border-box;
-
-  display: inline-flex;
+/* ---------- button in the navbar ---------- */
+.navbar-user-btn {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-
-  padding: 13px 22px;
-
+  gap: 10px;
+  padding: 0;
   border: none;
-  border-radius: 999px;
-
-  font-family: inherit; /* buttons don't inherit font by default */
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 100%;
-  letter-spacing: 0;
-  white-space: nowrap;
-
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
   cursor: pointer;
 }
 
-.navbar-signup {
-  background: var(--color-red);
+.navbar-username {
+  font-size: 12px;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
-.navbar-login {
-  background: var(--text-primary);
-  color: var(--bg-page); /* #070C1C, not pure black */
+.navbar-chevron {
+  display: flex;
+  margin-left: 6px;
+  color: var(--text-primary);
+  transition: transform 0.15s;
+}
+.navbar-chevron.is-open { transform: rotate(180deg); }
+.navbar-chevron-icon { width: 14px; height: 14px; }
+
+/* ---------- avatar ---------- */
+.avatar { position: relative; display: inline-block; flex-shrink: 0; }
+.avatar--sm { width: 28px; height: 28px; }
+.avatar--lg { width: 42px; height: 42px; }
+
+.avatar-img,
+.avatar-initials {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar--sm .avatar-img, .avatar--sm .avatar-initials { border-radius: 6px; }
+.avatar--lg .avatar-img, .avatar--lg .avatar-initials { border-radius: 8px; }
+
+.avatar-initials {
+  display: grid;
+  place-items: center;
+  background: #1e2031;
+  color: white;
+  font-weight: 800;
+}
+.avatar--sm .avatar-initials { font-size: 10px; }
+.avatar--lg .avatar-initials { font-size: 13px; }
+
+.avatar-dot {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid #050b1a;
+}
+.avatar--lg .avatar-dot { width: 12px; height: 12px; right: -4px; bottom: -4px; }
+.avatar-dot.is-incomplete { background: #f08a0b; }
+.avatar-dot.is-complete { background: #3ddc84; }
+
+/* ---------- dropdown ---------- */
+.navbar-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+  padding: 20px 0 0;
+  border-radius: 20px;
+  background: #050b1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.menu-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+.menu-user-name { font-size: 14px; font-weight: 700; line-height: 1.2; color: white; }
+.menu-user-email { margin-top: 2px; font-size: 12px; color: #a9a9a9; }
+
+/* banner */
+.menu-banner {
+  margin: 16px 20px 0;
+  border-radius: 12px;
+}
+.menu-banner.is-incomplete {
+  padding: 12px 16px;
+  background: #1c1a1b;
+}
+.menu-banner-title { font-size: 14px; font-weight: 700; color: #f08a0b; }
+.menu-banner-text { margin-top: 4px; font-size: 12px; line-height: 1.35; color: #a9a9a9; }
+
+.menu-banner.is-complete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  background: #0d211f;
+  color: #3ddc84;
+  font-size: 14px;
+  font-weight: 600;
+}
+.banner-check { width: 16px; height: 16px; }
+
+/* items */
+.menu-items { display: flex; flex-direction: column; margin-top: 8px; }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 41px;
+  padding: 0 20px;
+  border: none;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.menu-item:hover { background: rgba(255, 255, 255, 0.04); }
+.menu-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.menu-divider {
+  height: 1px;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu-item.is-logout {
+  height: 48px;
+  color: #ec3013;
 }

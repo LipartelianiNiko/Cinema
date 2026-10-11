@@ -4,6 +4,8 @@ import type { MovieSessionsGroup } from "../../types/allSessions";
 import { getAllSessions } from "../../services.ts/movieServices";
 import FilterPanel, { EMPTY_FILTERS, type SessionFilters } from "./filterPanel";
 import { Fragment, useEffect, useState } from "react";
+import { useAuth } from "../../context/authContext";
+import SeatSelectionModal from "../../components/seatSelection/seatSelectionModal";
 
 function getPageList(page: number, lastPage: number): (number | "…")[] {
     const nums = Array.from(new Set([1, page - 1, page, page + 1, lastPage]))
@@ -25,6 +27,17 @@ function SessionsPage() {
     const [totalSessions, setTotalSessions] = useState(0);
     const [allSessions, setAllSessions] = useState<MovieSessionsGroup[]>([]);
     const [loading, setLoading] = useState(false);
+
+    const [openSessionId, setOpenSessionId] = useState<number | null>(null);
+const { user, openLogin, logout } = useAuth();
+
+function handleSessionClick(id: number) {
+    if (!user) {
+        openLogin(() => setOpenSessionId(id)); // after login, open this session
+        return;
+    }
+    setOpenSessionId(id);
+}
 
     useEffect(() => {
         const controller = new AbortController();
@@ -87,7 +100,10 @@ function SessionsPage() {
                     )}
                     {allSessions.map((movieGroup) => (
                         <Fragment key={movieGroup.movie.id}>
-                            <MovieListCard movieGroup={movieGroup} />
+                            <MovieListCard
+                                movieGroup={movieGroup}
+                                onSessionClick={handleSessionClick}
+                            />
                             <div className="movies-border"></div>
                         </Fragment>
                     ))}
@@ -139,6 +155,28 @@ function SessionsPage() {
                     </nav>
                 )}
             </div>
+
+            {openSessionId !== null && (
+                <SeatSelectionModal
+                    sessionId={openSessionId}
+                    onClose={() => setOpenSessionId(null)}
+                    onLoginRequired={() => {
+                        const id = openSessionId;
+                        logout();
+                        setOpenSessionId(null);
+                        openLogin(() => setOpenSessionId(id));
+                    }}
+                    profile={
+                        user
+                            ? {
+                                fullName: user.fullName ?? "",
+                                email: user.email,
+                                mobileNumber: user.mobileNumber ?? "",
+                            }
+                            : undefined
+                    }
+                />
+            )}
         </div>
     );
 }

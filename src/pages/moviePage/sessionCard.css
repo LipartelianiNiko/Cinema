@@ -254,3 +254,12 @@
 
     text-align: center;
 }
+
+.session-frame {
+    cursor: pointer;
+}
+
+.session-frame.is-sold-out {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
