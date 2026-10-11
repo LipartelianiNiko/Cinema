@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useFilterOptions } from "../../context/filterOptionsCOntext";
-import "./FilterPanel.css";
+import "./filterPanel.css";
 
 export type SessionFilters = {
     venues: string[];    // slugs

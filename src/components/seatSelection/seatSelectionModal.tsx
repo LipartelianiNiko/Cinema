@@ -6,7 +6,7 @@ import { useFilterOptions } from "../../context/filterOptionsCOntext";
 import type { SessionListItem } from "../../types/allSessions";
 import type { SeatSection } from "../../types/sessionSeats";
 import type { Hold, Order } from "../../types/booking";
-import "./SeatSelectionModal.css";
+import "./seatSelectionModal.css";
 
 type SelectedSeat = {
     id: number;
